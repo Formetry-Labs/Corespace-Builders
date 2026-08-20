@@ -1,0 +1,59 @@
+@use '@scss/common' as *;
+
+.definition {
+  width: 100%;
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.15rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.eyebrowDash {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--brand-charcoal, #1e2522);
+}
+
+.body {
+  margin: 0.15rem 0 0;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--brand-slate, #5f665f);
+}
+
+@include small-break {
+  .eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .heading {
+    font-size: 1.85rem;
+  }
+
+  .body {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}

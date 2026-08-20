@@ -1,0 +1,142 @@
+@use '@scss/common' as *;
+
+.footer {
+  position: relative;
+  background: var(--brand-charcoal-forest, #0f1c19);
+  color: rgba(248, 244, 236, 0.88);
+  padding-top: clamp(3.5rem, 6vw, 5rem);
+  padding-bottom: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1.35fr) minmax(0, 2.65fr);
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+  padding-bottom: clamp(2.5rem, 4vw, 3.25rem);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 22rem;
+}
+
+.brandName {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(1.65rem, 2.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.brandAccent {
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(248, 244, 236, 0.72);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  min-width: 0;
+}
+
+.colHeader {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.colItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer .link {
+  display: inline-block;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: rgba(248, 244, 236, 0.78);
+  text-decoration: none;
+  transition: color 180ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #fff;
+  }
+}
+
+.bottom {
+  border-top: 1px solid rgba(248, 244, 236, 0.12);
+  padding-top: 1.35rem;
+  text-align: center;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: rgba(248, 244, 236, 0.55);
+}
+
+@include mid-break {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .brand {
+    max-width: 28rem;
+  }
+
+  .columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+  }
+}
+
+@include small-break {
+  .columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brandName {
+    font-size: 1.55rem;
+  }
+
+  .tagline {
+    font-size: 0.92rem;
+  }
+
+  .footer .link {
+    font-size: 0.92rem;
+  }
+}

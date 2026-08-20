@@ -1,0 +1,195 @@
+@use '@scss/common' as *;
+
+.commonChallenges {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.eyebrowDash {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--brand-charcoal, #1e2522);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.problemsCard,
+.approachCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: clamp(1.6rem, 3vw, 2.25rem);
+  border-radius: 20px;
+  min-height: 100%;
+}
+
+.problemsCard {
+  background: #fff;
+  border: 1px solid var(--brand-border, #ddd2c0);
+  box-shadow: var(--brand-shadow, 0 10px 30px rgba(31, 58, 52, 0.08));
+}
+
+.approachCard {
+  background: var(--brand-charcoal-forest, #172622);
+  border: 1px solid rgba(200, 184, 154, 0.12);
+  box-shadow: 0 14px 34px rgba(23, 38, 34, 0.22);
+}
+
+.cardLabel,
+.cardLabelLight {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cardLabel {
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.cardLabelLight {
+  color: var(--brand-stone, #c8b89a);
+}
+
+.cardTitle,
+.cardTitleLight {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.cardTitle {
+  color: var(--brand-charcoal, #1e2522);
+}
+
+.cardTitleLight {
+  color: var(--brand-ivory, #f8f4ec);
+}
+
+.list,
+.listLight {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.list li,
+.listLight li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 0;
+  font-size: clamp(1rem, 1.15vw, 1.08rem);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.list li {
+  color: var(--brand-charcoal, #1e2522);
+  border-bottom: 1px dashed rgba(221, 210, 192, 0.95);
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.listLight li {
+  color: rgba(248, 244, 236, 0.88);
+  border-bottom: 1px dashed rgba(200, 184, 154, 0.28);
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.diamond {
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  color: rgba(184, 102, 59, 0.85);
+}
+
+.check {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--brand-stone, #c8b89a);
+}
+
+@include mid-break {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@include small-break {
+  .header {
+    align-items: flex-start;
+    text-align: left;
+    max-width: none;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .heading {
+    font-size: 1.85rem;
+  }
+
+  .problemsCard,
+  .approachCard {
+    border-radius: 18px;
+    padding: 1.35rem 1.2rem;
+  }
+
+  .list li,
+  .listLight li {
+    font-size: 1rem;
+    padding: 0.9rem 0;
+  }
+}

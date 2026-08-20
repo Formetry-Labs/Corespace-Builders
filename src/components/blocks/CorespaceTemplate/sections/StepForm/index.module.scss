@@ -1,0 +1,339 @@
+@use '@scss/common' as *;
+
+.stepForm {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.eyebrowDash {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.heading {
+  margin: 0;
+  max-width: 22ch;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--brand-charcoal-forest, #172622);
+}
+
+.empty {
+  margin: 0;
+  text-align: center;
+  color: var(--color-base-500);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.4fr);
+  border-radius: 28px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--brand-shadow, 0 10px 30px rgba(31, 58, 52, 0.08));
+  border: 1px solid var(--color-base-150, #e8dfd0);
+
+  @include mid-break {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  background: var(--brand-charcoal-forest, #172622);
+  color: rgba(248, 244, 236, 0.88);
+}
+
+.sidebarTitle {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(1.5rem, 2.4vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.sidebarBody {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(248, 244, 236, 0.78);
+}
+
+.sidebarList {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sidebarList li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(248, 244, 236, 0.9);
+}
+
+.sidebarList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--brand-terracotta, #b8663b);
+}
+
+.formSide {
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  background: #fff;
+  min-height: 22rem;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  min-height: 100%;
+}
+
+.stepMeta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stepCount,
+.stepHint {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-base-500);
+}
+
+.stepCount strong {
+  color: var(--brand-charcoal-forest, #172622);
+  font-weight: 700;
+}
+
+.stepHint {
+  text-align: right;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--color-base-150, #e8dfd0);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--brand-terracotta, #b8663b);
+  transition: width 280ms ease;
+}
+
+.stepBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(1.65rem, 2.8vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--brand-charcoal-forest, #172622);
+}
+
+.fieldWrap {
+  max-width: 28rem;
+}
+
+.selectCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+
+  @include small-break {
+    grid-template-columns: 1fr;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid var(--color-base-200, #ddd2c0);
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.option:hover {
+  border-color: var(--color-base-300, #c8b89a);
+  background: var(--color-base-50, #f8f4ec);
+}
+
+.optionSelected {
+  border-color: var(--brand-terracotta, #b8663b);
+  background: rgba(184, 102, 59, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(184, 102, 59, 0.25);
+}
+
+.radio {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-base-300, #c8b89a);
+  background: #fff;
+}
+
+.optionSelected .radio {
+  border-color: var(--brand-terracotta, #b8663b);
+}
+
+.radioDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--brand-terracotta, #b8663b);
+}
+
+.optionLabel {
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--brand-charcoal-forest, #172622);
+}
+
+.fieldError {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-error-400, #a94438);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.backButton {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0.65rem 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-base-500);
+  cursor: pointer;
+}
+
+.backButton:hover {
+  color: var(--brand-charcoal-forest, #172622);
+}
+
+.nextButton {
+  appearance: none;
+  border: none;
+  margin-left: auto;
+  min-width: 7.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 12px;
+  background: var(--color-base-300, #c8b89a);
+  color: var(--brand-charcoal-forest, #172622);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.nextButton:hover:not(:disabled) {
+  background: var(--color-base-350, #b5a68a);
+}
+
+.nextButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.confirmation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16rem;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  color: var(--brand-charcoal-forest, #172622);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

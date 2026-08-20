@@ -1,0 +1,263 @@
+@use '@scss/common' as *;
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+  width: 100%;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 36rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.eyebrowDash {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.heading {
+  margin: 0 0 1.35rem;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(2.1rem, 3.6vw, 3.35rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--brand-charcoal, #1e2522);
+}
+
+.intro,
+.listIntro,
+.closing {
+  margin: 0;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--brand-slate, #5f665f);
+}
+
+.intro {
+  margin-bottom: 1.35rem;
+}
+
+.listBlock {
+  margin-bottom: 1.35rem;
+}
+
+.listIntro {
+  margin-bottom: 0.65rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.55;
+  color: var(--brand-charcoal, #1e2522);
+}
+
+.listDash {
+  flex-shrink: 0;
+  color: var(--brand-terracotta, #b8663b);
+  font-weight: 500;
+}
+
+.closing {
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.primaryCta,
+.secondaryCta {
+  border-radius: 999px !important;
+  min-height: 52px;
+  padding: 0.9rem 1.55rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.01em;
+}
+
+.primaryCta {
+  background: var(--brand-terracotta, #b8663b) !important;
+  border-color: var(--brand-terracotta, #b8663b) !important;
+  color: #fff !important;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--brand-terracotta-hover, #9f5230) !important;
+    border-color: var(--brand-terracotta-hover, #9f5230) !important;
+    color: #fff !important;
+  }
+}
+
+.secondaryCta {
+  background: transparent !important;
+  border: 1.5px solid var(--brand-charcoal, #1e2522) !important;
+  color: var(--brand-charcoal, #1e2522) !important;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--brand-sage, #dde5d8) !important;
+    border-color: var(--brand-forest, #1f3a34) !important;
+    color: var(--brand-forest, #1f3a34) !important;
+  }
+}
+
+.media {
+  width: 100%;
+  min-width: 0;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--brand-mist, #efe7da);
+  box-shadow: var(--brand-shadow, 0 10px 30px rgba(31, 58, 52, 0.08));
+  aspect-ratio: 1 / 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.caption {
+  position: absolute;
+  left: 1.1rem;
+  bottom: 1.1rem;
+  max-width: min(18rem, calc(100% - 2.2rem));
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(23, 38, 34, 0.88);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(23, 38, 34, 0.18);
+
+  p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    font-weight: 500;
+    color: var(--brand-ivory, #f8f4ec);
+  }
+}
+
+@include mid-plus-break {
+  .about {
+    gap: 2.5rem;
+  }
+
+  .heading {
+    font-size: clamp(2rem, 4.2vw, 2.75rem);
+  }
+}
+
+@include mid-break {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .copy {
+    max-width: none;
+  }
+
+  .imageFrame {
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
+  }
+
+  .caption {
+    left: 0.9rem;
+    bottom: 0.9rem;
+    max-width: min(20rem, calc(100% - 1.8rem));
+  }
+}
+
+@include small-break {
+  .eyebrow {
+    margin-bottom: 1rem;
+    font-size: 0.72rem;
+  }
+
+  .heading {
+    margin-bottom: 1.1rem;
+    font-size: 2rem;
+  }
+
+  .intro,
+  .listIntro,
+  .closing,
+  .listItem {
+    font-size: 1rem;
+  }
+
+  .closing {
+    margin-bottom: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  .imageFrame {
+    aspect-ratio: 16 / 10;
+    border-radius: 18px;
+  }
+
+  .caption {
+    left: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.75rem 0.85rem;
+
+    p {
+      font-size: 0.82rem;
+    }
+  }
+}

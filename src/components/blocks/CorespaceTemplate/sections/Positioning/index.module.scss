@@ -1,0 +1,213 @@
+@use '@scss/common' as *;
+
+.positioning {
+  width: 100%;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  min-height: 560px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--brand-shadow, 0 10px 30px rgba(31, 58, 52, 0.08));
+  border: 1px solid rgba(31, 58, 52, 0.08);
+}
+
+.media {
+  position: relative;
+  min-height: 100%;
+  background: var(--brand-mist, #efe7da);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  background: var(--brand-charcoal-forest, #172622);
+  color: var(--brand-ivory, #f8f4ec);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.eyebrowDash {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
+  max-width: 18ch;
+}
+
+.subheading {
+  margin: 0;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.55;
+  color: rgba(248, 244, 236, 0.72);
+}
+
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem 1.25rem;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.iconBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(184, 102, 59, 0.85);
+  border-radius: 8px;
+  color: var(--brand-terracotta, #b8663b);
+}
+
+.icon {
+  display: block;
+}
+
+.featureCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.featureTitle {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.featureDescription {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(248, 244, 236, 0.68);
+}
+
+.callout {
+  margin-top: auto;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(184, 102, 59, 0.75);
+  border-radius: 12px;
+  background: rgba(23, 38, 34, 0.35);
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    font-weight: 500;
+    color: var(--brand-terracotta, #b8663b);
+  }
+}
+
+@include mid-break {
+  .shell {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: 20px;
+  }
+
+  .media {
+    min-height: 260px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .heading {
+    max-width: none;
+  }
+}
+
+@include small-break {
+  .shell {
+    border-radius: 18px;
+  }
+
+  .panel {
+    padding: 1.4rem 1.2rem 1.5rem;
+    gap: 1.35rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .feature {
+    flex-direction: row;
+    gap: 0.9rem;
+  }
+
+  .iconBox {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .featureTitle {
+    font-size: 1.05rem;
+  }
+
+  .featureDescription,
+  .callout p {
+    font-size: 0.9rem;
+  }
+}
